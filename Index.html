@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7909867820311891"
+        crossorigin="anonymous"></script>
+
+    <meta name="naver-site-verification" content="a37079f2b39b839c0506981aa1e5ec1e2e608711" />
+	
+    <meta property="og:type" content="website"> 
+    <meta property="og:title" content="코인 주식 평단가 계산기">
+    <meta property="og:description" content="코인과 주식 평단가 계산기 사이트 입니다">
+    <meta property="og:image" content="https://nftxcoin.store/myimage.png">
+    <meta property="og:url" content="https://nftxcoin.store">
+
+    <meta name="description" content="코인과 주식 평단가 계산기 사이트 입니다">
+    <meta name="keywords" content="코인, 평단가, 계산기, cryptocurrency, coin, calculator">
+    <title>코인 주식 평단가 계산기</title>
+    <link rel="icon" href="favicon.ico" type="favicon">
+
+   <style>
+header {
+    background: #000; /* 단색으로 배경을 블랙으로 설정 */
+    color: white; /* 텍스트 색상을 흰색으로 설정 */
+    text-align: left; /* 텍스트를 헤더의 왼쪽으로 정렬 */
+    padding-left: 10px; /* 왼쪽 여백을 추가하여 텍스트를 옮김 */    
+}
+
+
+        body { background-color: #161616;}
+    </style>
+
+</head>
+<body>
+
+<header>
+<h1>코인 주식 평단가 계산기</h1>
+</header>
+
+<script src="https://ads-partners.coupang.com/g.js"></script>
+<script type="text/javascript">
+	new PartnersCoupang.G({"id":577509,"template":"carousel","trackingCode":"AF7035269","width":"800","height":"150","SubParam":"21421168db"});
+</script>    
+
+<p>
+    <span style="display: inline-block; border-radius: 15px 15px 15px 0; border: 3px solid #FFAD5B; padding: 0.5em 0.6em; color: #FF8000; background-color: #FFF8E7;">
+        비트코인, 이더리움, 도지코인, 리플, 메디블록 물리셨나요?<br>
+        물타기를 하기 전 평단가 계산을 해보세요.<br>
+        평단가란? 우리가 매수한(구매한) 각 주식의 평균단가입니다.
+    </span>
+</p>
+    
+<style>
+    /* 흰색 텍스트 스타일 */
+    body {
+        color: white; /* 전체 페이지의 텍스트 색상을 흰색으로 설정 */
+    }
+</style>
+
+<!-- 첫 번째 fieldset -->
+<fieldset>
+    <legend>현재 보유</legend>
+    <label for="currentAverage">보유 평단가:</label>
+    <input type="number" id="currentAverage" oninput="calculateCurrentTotal()"><br>
+    <label for="currentQuantity">보유 수량:</label>
+    <input type="number" id="currentQuantity" oninput="calculateCurrentTotal()"><br>
+    <p id="currentTotal">보유금액: 0.0원</p>
+</fieldset>
+
+<!-- 두 번째 fieldset -->
+<fieldset>
+    <legend>추가 매수</legend>
+    <label for="additionalAverage">평단가:</label>
+    <input type="number" id="additionalAverage" oninput="calculateAdditional()"><br>
+    <label for="additionalQuantity">수량:</label>
+    <input type="number" id="additionalQuantity" oninput="calculateAdditional()"><br>
+    <p id="additionalTotal">추가 매수금액: 0.0원</p>
+</fieldset>
+
+<!-- 세 번째 fieldset -->
+<fieldset>
+    <legend>최종 보유</legend>
+    <p>최종 평단가: <span id="finalAverage"></span></p>
+    <p>최종 수량: <span id="finalQuantity"></span></p>
+    <p>최종 금액: <span id="finalTotal"></span></p>
+</fieldset>
+
+  
+
+    <script>
+    function calculateCurrentTotal() {
+        var currentAverage = parseFloat(document.getElementById("currentAverage").value) || 0;
+        var currentQuantity = parseInt(document.getElementById("currentQuantity").value) || 0;
+        var currentTotal = currentAverage * currentQuantity;
+        document.getElementById("currentTotal").innerHTML = "보유금액: " + currentTotal.toFixed(1) + "원";
+        calculateFinal();
+    }
+
+    function calculateAdditional() {
+        var additionalAverage = parseFloat(document.getElementById("additionalAverage").value) || 0;
+        var additionalQuantity = parseInt(document.getElementById("additionalQuantity").value) || 0;
+        var additionalTotal = additionalAverage * additionalQuantity;
+        document.getElementById("additionalTotal").innerHTML = "추가 매수금액: " + additionalTotal.toFixed(1) + "원";
+        calculateFinal();
+    }
+
+    function calculateFinal() {
+        var currentAverage = parseFloat(document.getElementById("currentAverage").value) || 0;
+        var currentQuantity = parseInt(document.getElementById("currentQuantity").value) || 0;
+        var additionalAverage = parseFloat(document.getElementById("additionalAverage").value) || 0;
+        var additionalQuantity = parseInt(document.getElementById("additionalQuantity").value) || 0;
+        var currentTotal = currentAverage * currentQuantity;
+        var additionalTotal = additionalAverage * additionalQuantity;
+        var totalQuantity = currentQuantity + additionalQuantity;
+        var finalAverage = ((currentTotal + additionalTotal) / totalQuantity).toFixed(1);
+        var finalTotal = (currentTotal + additionalTotal).toFixed(1);
+
+        if (!isNaN(finalAverage) && isFinite(finalAverage)) {
+            document.getElementById("finalAverage").innerHTML = finalAverage + "원";
+        } else {
+            document.getElementById("finalAverage").innerHTML = "수량을 입력하세요!";
+        }
+
+        document.getElementById("finalQuantity").innerHTML = totalQuantity + "개";
+        if (!isNaN(finalTotal) && isFinite(finalTotal)) {
+            document.getElementById("finalTotal").innerHTML = finalTotal + "원";
+        } else {
+            document.getElementById("finalTotal").innerHTML = "";
+        }
+    }
+</script>
+
+
+
+<div> 이 포스팅은 애드릭스 수익이 발생할 수 있습니다.</div>
+</body>
+</html>
